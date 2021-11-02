@@ -13,7 +13,7 @@ namespace projetSTIVE.Models
         private int zipcode;
         private string firstname;
         private string lastname;
-        private WebUser User;
+        private WebUser user;
 
         public int AddressId { get => addressId; }
         public string City { get => city; set => city = value; }
@@ -21,6 +21,6 @@ namespace projetSTIVE.Models
         public int Zipcode { get => zipcode; set => zipcode = value; }
         public string Firstname { get => firstname; set => firstname = value; }
         public string Lastname { get => lastname; set => lastname = value; }
-        public WebUser User1 { get => User; set => User = value; }
+        public WebUser User { get => user; set => user = value; }
     }
 }

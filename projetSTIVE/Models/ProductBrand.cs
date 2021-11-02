@@ -11,7 +11,6 @@ namespace projetSTIVE.Models
         private int brandId;
         private string name;
         private string description;
-        private static List<ProductBrand> brands = new List<ProductBrand>();
         private static string request;
         private static MySqlConnection connection;
         private static MySqlCommand command;

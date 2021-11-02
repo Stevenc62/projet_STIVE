@@ -14,7 +14,6 @@ namespace projetSTIVE.Models
         private int zipcode;
         private string city;
         private string email;
-        private static List<Supplier> Suppliers = new List<Supplier>();
         private static string request;
         private static MySqlConnection connection;
         private static MySqlCommand command;

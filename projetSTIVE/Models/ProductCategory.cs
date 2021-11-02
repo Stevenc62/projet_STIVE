@@ -11,7 +11,6 @@ namespace projetSTIVE.Models
         private int categoryId;
         private string name;
         private string description;
-        private static List<ProductCategory> categories = new List<ProductCategory>();
         private static string request;
         private static MySqlConnection connection;
         private static MySqlCommand command;
