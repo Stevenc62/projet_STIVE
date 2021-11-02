@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\projetSTIVE.csproj": {}
+    "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\projetSTIVE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\projetSTIVE.csproj": {
+    "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\projetSTIVE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\projetSTIVE.csproj",
+        "projectUniqueName": "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\projetSTIVE.csproj",
         "projectName": "projetSTIVE",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\projetSTIVE.csproj",
-        "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\obj\\",
+        "projectPath": "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\projetSTIVE.csproj",
+        "packagesPath": "C:\\Users\\artio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.27, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
