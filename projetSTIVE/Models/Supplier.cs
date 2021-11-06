@@ -17,7 +17,7 @@ namespace projetSTIVE.Models
         private static string request;
         private static MySqlConnection connection;
         private static MySqlCommand command;
-        private static MySqlDataReader reader;
+        private static MySqlDataReader  reader;
 
         public int Supplier_id { get => supplierId; }
         public string Name { get => name; set => name = value; }
