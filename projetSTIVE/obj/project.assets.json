@@ -849,19 +849,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\artio\\.nuget\\packages\\": {}
+    "C:\\Users\\steve\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\projetSTIVE.csproj",
+      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\projetSTIVE.csproj",
       "projectName": "projetSTIVE",
-      "projectPath": "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\projetSTIVE.csproj",
-      "packagesPath": "C:\\Users\\artio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artio\\Documents\\programming\\projet_STIVE\\projetSTIVE\\obj\\",
+      "projectPath": "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\projetSTIVE.csproj",
+      "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\steve\\source\\repos\\projetSTIVE\\projetSTIVE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -910,7 +910,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

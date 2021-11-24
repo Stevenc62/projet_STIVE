@@ -11,7 +11,7 @@ namespace projetSTIVE.Tools
         public Db()
         {
         }
-        private static string connectionString = "Server=127.0.0.1;DataBase=stive;UserId=root;password=";
+        private static string connectionString = "Server=127.0.0.1;DataBase=projet_stive;UserId=root;password=";
         public static MySqlConnection Connection { get => new MySqlConnection(connectionString); }
     }
 }
