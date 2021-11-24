@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace projetSTIVE.Services
 {
-    interface ILogin
+    public interface ILogin
     {
         void SaveAccessToSession(string email, string password);
         bool IsLogin();
