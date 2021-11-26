@@ -5,12 +5,18 @@ USE projet_stive;
 CREATE TABLE supplier(
    supplier_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
-   adress INT NOT NULL,
-   zipcode VARCHAR(50) NOT NULL,
+   adress VARCHAR(50) NOT NULL,
+   zipcode INT NOT NULL,
    city VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
    PRIMARY KEY(supplier_id)
 );
+
+INSERT INTO supplier (name, adress, zipcode, city, email)
+   VALUES 
+   ('Le gout du vin', '10 rue des Artisans', 21800, 'Quetigny', 'commercialparis@le-gout-du-vin.fr'),
+   ('Les grappes', '15 Rue du Sentier', 75002, 'Paris', 'commercialfrance@lesgrappes.fr')
+;
 
 CREATE TABLE product_category(
    category_id INT AUTO_INCREMENT,
@@ -32,6 +38,12 @@ CREATE TABLE product_brand(
    PRIMARY KEY(brand_id)
 );
 
+INSERT INTO product_brand (name, description)
+   VALUES 
+   ('Roche Mazet', 'Avec Roche Mazet Signature, l"histoire du Pays d"Oc se raconte au fil des cépages'),
+   ('Cellier des Dauphins', 'Cellier des Dauphins, ses vins solaires issus du savoir-faire de l"Union des Vignerons des Côtes du Rhône')
+;
+
 CREATE TABLE role(
    role_id INT AUTO_INCREMENT,
    code VARCHAR(50) NOT NULL,
@@ -40,11 +52,25 @@ CREATE TABLE role(
    PRIMARY KEY(role_id)
 );
 
+INSERT INTO role (code, name, description)
+   VALUES 
+   ('Admin', 'Administrateurs', 'Users possedant tout les droits'),
+   ('Users', 'Users', 'Users ayant acces au site mais ne possedant pas tout les droits' )
+;
+
 CREATE TABLE orders_status(
    status_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    PRIMARY KEY(status_id)
 );
+
+INSERT INTO orders_status (name)
+   VALUES 
+   ('En préparation'),
+   ('Expédié'),
+   ('En livraison'),
+   ('Livré')
+;
 
 CREATE TABLE product(
    product_id INT AUTO_INCREMENT,
@@ -63,6 +89,12 @@ CREATE TABLE product(
    FOREIGN KEY(brand_id) REFERENCES product_brand(brand_id)
 );
 
+INSERT INTO product (name, description, price, image, creation_date, quantity, supplier_id, category_id, brand_id)
+   VALUES 
+   ('Cellier des Dauphins Réserve 2018', 'Cellier des Dauphins Réserve 2018 Côtes du Rhône - Vin rouge de la Vallée du Rhône', 6.11, "", "2021-11-24", 10, 1, 1, 2),
+   ('Clairement Rosé 2019', 'Clairement Rosé de Roche Mazet 2019 Pays d’Oc - Vin rosé de Languedoc', 7.49, "", "2021-11-26", 14, 2, 2, 1)
+;
+
 CREATE TABLE web_user(
    user_id INT AUTO_INCREMENT,
    email VARCHAR(50) NOT NULL,
@@ -74,6 +106,12 @@ CREATE TABLE web_user(
    PRIMARY KEY(user_id),
    FOREIGN KEY(role_id) REFERENCES role(role_id)
 );
+
+INSERT INTO web_user (email, phone, password, firstname, lastname, role_id)
+   VALUES 
+   ('admin@vindious.fr', '0909645489', 'vindiousadminaccess', 'Admin', 'Access', 1),
+   ('jacques.bernard@gmail.com', '0653908541', 'bernard123456', 'Jacques', 'Bernard', 2)
+;
 
 CREATE TABLE orders(
    orders_id INT AUTO_INCREMENT,
@@ -87,6 +125,12 @@ CREATE TABLE orders(
    FOREIGN KEY(user_id) REFERENCES web_user(user_id)
 );
 
+INSERT INTO orders (price, order_date, quantity, status_id, user_id)
+   VALUES 
+   (12.22, '2021-11-26 10:45:12', 2, 1, 2),
+   (7.49, '2021-11-24 12:58:04', 1, 3, 1)
+;
+
 CREATE TABLE discount(
    discount_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
@@ -96,6 +140,12 @@ CREATE TABLE discount(
    PRIMARY KEY(discount_id),
    FOREIGN KEY(product_id) REFERENCES product(product_id)
 );
+
+INSERT INTO discount (name, discount_percent, active, product_id)
+   VALUES 
+   ('Remboursement', 10, 0, 1),
+   ('Good Deals', 25, 1, 2)
+;
 
 CREATE TABLE customer_address(
    adress_id INT AUTO_INCREMENT,
@@ -109,6 +159,12 @@ CREATE TABLE customer_address(
    FOREIGN KEY(user_id) REFERENCES web_user(user_id)
 );
 
+INSERT INTO customer_address (city, zipcode, address, firstname, lastname, user_id)
+   VALUES 
+   ('Valenciennes', 59300, '36 rue Jean Bernier', 'Jacques', 'Bernard', 2),
+   ('Lille', 59800, '8 Bd Louis XIV', 'Oliver', 'Campbell', 1)
+;
+
 CREATE TABLE orders_detail(
    product_id INT AUTO_INCREMENT,
    orders_id INT,
@@ -118,3 +174,9 @@ CREATE TABLE orders_detail(
    FOREIGN KEY(product_id) REFERENCES product(product_id),
    FOREIGN KEY(orders_id) REFERENCES orders(orders_id)
 );
+
+INSERT INTO orders_detail (orders_id, price, quantity)
+   VALUES 
+   (1, 12.22, 2),
+   (2, 7.49, 1)
+;
