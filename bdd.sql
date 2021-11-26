@@ -3,7 +3,7 @@ CREATE DATABASE projet_stive;
 USE projet_stive;
 
 CREATE TABLE supplier(
-   supplier_id INT,
+   supplier_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    adress INT NOT NULL,
    zipcode VARCHAR(50) NOT NULL,
@@ -13,21 +13,27 @@ CREATE TABLE supplier(
 );
 
 CREATE TABLE product_category(
-   category_id INT,
+   category_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    description VARCHAR(100) NOT NULL,
    PRIMARY KEY(category_id)
 );
 
+INSERT INTO product_category (name, description)
+   VALUES 
+   ('Rouge', 'Venez gouter nos meilleurs vins rouges'),
+   ('Rosé', 'Venez gouter nos meilleurs rosé')
+;
+
 CREATE TABLE product_brand(
-   brand_id INT,
+   brand_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    description VARCHAR(100) NOT NULL,
    PRIMARY KEY(brand_id)
 );
 
 CREATE TABLE role(
-   role_id INT,
+   role_id INT AUTO_INCREMENT,
    code VARCHAR(50) NOT NULL,
    name VARCHAR(50) NOT NULL,
    description VARCHAR(50) NOT NULL,
@@ -35,13 +41,13 @@ CREATE TABLE role(
 );
 
 CREATE TABLE orders_status(
-   status_id INT,
+   status_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    PRIMARY KEY(status_id)
 );
 
 CREATE TABLE product(
-   product_id INT,
+   product_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    description VARCHAR(50) NOT NULL,
    price DECIMAL(15,2) NOT NULL,
@@ -58,7 +64,7 @@ CREATE TABLE product(
 );
 
 CREATE TABLE web_user(
-   user_id INT,
+   user_id INT AUTO_INCREMENT,
    email VARCHAR(50) NOT NULL,
    phone VARCHAR(10) NOT NULL,
    password VARCHAR(50) NOT NULL,
@@ -70,7 +76,7 @@ CREATE TABLE web_user(
 );
 
 CREATE TABLE orders(
-   orders_id INT,
+   orders_id INT AUTO_INCREMENT,
    price DECIMAL(15,2) NOT NULL,
    order_date DATETIME NOT NULL,
    quantity INT NOT NULL,
@@ -82,7 +88,7 @@ CREATE TABLE orders(
 );
 
 CREATE TABLE discount(
-   discount_id INT,
+   discount_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    discount_percent DECIMAL(15,2) NOT NULL,
    active BOOLEAN NOT NULL,
@@ -92,7 +98,7 @@ CREATE TABLE discount(
 );
 
 CREATE TABLE customer_address(
-   adress_id INT,
+   adress_id INT AUTO_INCREMENT,
    city VARCHAR(50) NOT NULL,
    zipcode INT NOT NULL,
    address VARCHAR(50) NOT NULL,
@@ -104,7 +110,7 @@ CREATE TABLE customer_address(
 );
 
 CREATE TABLE orders_detail(
-   product_id INT,
+   product_id INT AUTO_INCREMENT,
    orders_id INT,
    price DECIMAL(15,2) NOT NULL,
    quantity INT NOT NULL,
