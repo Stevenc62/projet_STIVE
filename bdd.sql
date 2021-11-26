@@ -131,6 +131,24 @@ INSERT INTO orders (price, order_date, quantity, status_id, user_id)
    (7.49, '2021-11-24 12:58:04', 1, 3, 1)
 ;
 
+CREATE TABLE orders_inventory(
+   inventory_id INT AUTO_INCREMENT,
+   supplier_id INT,
+   product_id INT,
+   quantity INT,
+   status_id INT NOT NULL,
+   PRIMARY KEY(inventory_id),
+   FOREIGN KEY(supplier_id) REFERENCES supplier(supplier_id),
+   FOREIGN KEY(product_id) REFERENCES product(product_id),
+   FOREIGN KEY(status_id) REFERENCES orders_status(status_id)
+);
+
+INSERT INTO orders_inventory (supplier_id, product_id, quantity, status_id)
+   VALUES 
+   (1, 1, 8, 2),
+   (2, 2, 4, 4)
+;
+
 CREATE TABLE discount(
    discount_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
