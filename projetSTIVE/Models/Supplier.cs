@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using projetSTIVE.Tools;
 
 namespace projetSTIVE.Models
 {
@@ -26,9 +27,21 @@ namespace projetSTIVE.Models
         public string City { get => city; set => city = value; }
         public string Email { get => email; set => email = value; }
 
-        public Supplier()
+        public bool Save()
         {
-
+            request = "INSERT INTO supplier (name, address, zipcode, city, email) values (@name, @address, @zipcode, @city, @email);";
+            connection = Db.Connection;
+            command = new MySqlCommand(request, connection);
+            command.Parameters.Add(new MySqlParameter("@name", Name));
+            command.Parameters.Add(new MySqlParameter("@address", Address));
+            command.Parameters.Add(new MySqlParameter("@zipcode", Zipcode));
+            command.Parameters.Add(new MySqlParameter("@city", City));
+            command.Parameters.Add(new MySqlParameter("@Email", Email));
+            connection.Open();
+            int nbRow = command.ExecuteNonQuery();
+            command.Dispose();
+            connection.Close();
+            return nbRow == 1;
         }
 
 

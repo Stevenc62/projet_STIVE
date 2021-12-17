@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Fournisseur";
+}
+
+<form class="container" asp-action="SubmitFormSupplier" asp-controller="Admin" method="post">
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Name" placeholder="Nom du fournisseur" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Address" placeholder="Adresse du fournisseur" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Zipcode" placeholder="Code postale du fournisseur" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="City" placeholder="Ville du fournisseur" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <input type="text" name="Email" placeholder="Mail du fournisseur" class="form-control col-6 p-1" />
+    </div>
+    <div class="row m-1 justify-content-center">
+        <button type="submit" class="btn btn-secondary col-6 p-1"> Valider</button>
+    </div>
+</form>

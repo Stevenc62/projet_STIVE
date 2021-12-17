@@ -5,14 +5,14 @@ USE projet_stive;
 CREATE TABLE supplier(
    supplier_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
-   adress VARCHAR(50) NOT NULL,
+   address VARCHAR(50) NOT NULL,
    zipcode INT NOT NULL,
    city VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
    PRIMARY KEY(supplier_id)
 );
 
-INSERT INTO supplier (name, adress, zipcode, city, email)
+INSERT INTO supplier (name, address, zipcode, city, email)
    VALUES 
    ('Le gout du vin', '10 rue des Artisans', 21800, 'Quetigny', 'commercialparis@le-gout-du-vin.fr'),
    ('Les grappes', '15 Rue du Sentier', 75002, 'Paris', 'commercialfrance@lesgrappes.fr')
@@ -166,14 +166,14 @@ INSERT INTO discount (name, discount_percent, active, product_id)
 ;
 
 CREATE TABLE customer_address(
-   adress_id INT AUTO_INCREMENT,
+   address_id INT AUTO_INCREMENT,
    city VARCHAR(50) NOT NULL,
    zipcode INT NOT NULL,
    address VARCHAR(50) NOT NULL,
    firstname VARCHAR(50) NOT NULL,
    lastname VARCHAR(50) NOT NULL,
    user_id INT NOT NULL,
-   PRIMARY KEY(adress_id),
+   PRIMARY KEY(address_id),
    FOREIGN KEY(user_id) REFERENCES web_user(user_id)
 );
 
